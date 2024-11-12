@@ -1,13 +1,19 @@
 # 打包
 ```shell
+# 创建虚拟环境
+python -m venv .venv
+# 进入虚拟环境
+source .venv/bin/activate
+# 安装build
 pip install build
+# 打包
 python -m build
+
+# build后会生成一个dist目录，里面存在whl和tar.gz文件
 ```
 
 # 部署
 ```shell
-# build后会生成一个dist目录，里面存在whl和tar.gz文件
-
 # 可以创建一个虚拟环境
 python3 -m venv .venv
 
@@ -85,4 +91,29 @@ unset h3c_address
 
 ## grafana
 
+# 示例
 
+查看帮助
+
+```
+(test-cli-venv) $ tools -h
+Usage: tools [OPTIONS] COMMAND [ARGS]...
+
+Options:
+  -h, --help  Show this message and exit.
+
+Commands:
+  h3c
+  show  查看配置信息
+```
+
+查看h3c用户
+
+```
+(test-cli-venv) $ tools h3c get user
++-----------------------------+-----+-----------+-------+-------+-------+-----------+--------+-------+--------+
+|             Name            | UID | GroupName | ADVPN |  IKE  |  IPoE | LanAccess | Portal |  PPP  | SSLVPN |
++-----------------------------+-----+-----------+-------+-------+-------+-----------+--------+-------+--------+
+|         xxxxxxxx0011        | 120 |   system  | false | false | false |   false   | false  | false |  true  |
+|             xxx             |  4  |   system  | false | false | false |   false   | false  | false |  true  |
+```
