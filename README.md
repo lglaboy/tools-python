@@ -34,6 +34,19 @@ pip install dist/tools-0.1.0-py3-none-any.whl
 # /home/whoami/.tools_config not exist, 已基于模板创建，请修改内容。
 ```
 
+## 自动补全
+
+将生成的脚本写入文件，通过加载文件实现
+
+bash 环境
+
+```shell
+# 1.将脚本保存在某处
+_TOOLS_COMPLETE=bash_source tools > ~/.tools-complete.bash
+# 2.在~/.bashrc中获取文件，添加
+. ~/.tools-complete.bash
+```
+
 # 配置
 ## 用户配置文件
 Linux: ~/.tools_config
